@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d08db798656a97806c8053b69213555",
+    "content-hash": "3999e88afda7f2c1c7eff14eb21595df",
     "packages": [],
     "packages-dev": [
         {
@@ -2874,11 +2874,50 @@
                 }
             ],
             "time": "2025-11-06T14:47:06+00:00"
+        },
+        {
+            "name": "tamagoage/devtools",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tamagoage/php-devtools.git",
+                "reference": "6a99554ca6d7bccdc93f233b6fc444560dd7b98c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tamagoage/php-devtools/zipball/6a99554ca6d7bccdc93f233b6fc444560dd7b98c",
+                "reference": "6a99554ca6d7bccdc93f233b6fc444560dd7b98c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.4",
+                "symplify/coding-standard": "^13.0",
+                "symplify/easy-coding-standard": "^13.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tamagoage",
+                    "email": "116415023+tamagoage@users.noreply.github.com"
+                }
+            ],
+            "description": "PHP config",
+            "support": {
+                "source": "https://github.com/tamagoage/php-devtools/tree/main",
+                "issues": "https://github.com/tamagoage/php-devtools/issues"
+            },
+            "time": "2025-11-25T15:53:44+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "tamagoage/devtools": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

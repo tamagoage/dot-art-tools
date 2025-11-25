@@ -11,8 +11,19 @@
             "email": "116415023+tamagoage@users.noreply.github.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:tamagoage/php-devtools.git"
+        }
+    ],
     "require-dev": {
-        "symplify/coding-standard": "^13.0",
-        "symplify/easy-coding-standard": "^13.0"
+        "tamagoage/devtools": "dev-main"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
