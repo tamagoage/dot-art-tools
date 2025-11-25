@@ -1,0 +1,18 @@
+{
+    "name": "tamagoage/dot-art-tools",
+    "autoload": {
+        "psr-4": {
+            "Tamagoage\\DotArtTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tamagoage",
+            "email": "116415023+tamagoage@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "symplify/coding-standard": "^13.0",
+        "symplify/easy-coding-standard": "^13.0"
+    }
+}
