@@ -1,0 +1,29 @@
+{
+    "name": "tamagoage/dot-art-tools",
+    "autoload": {
+        "psr-4": {
+            "Tamagoage\\DotArtTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tamagoage",
+            "email": "116415023+tamagoage@users.noreply.github.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:tamagoage/php-devtools.git"
+        }
+    ],
+    "require-dev": {
+        "tamagoage/devtools": "dev-main"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
