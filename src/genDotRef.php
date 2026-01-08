@@ -9,18 +9,23 @@ declare(strict_types=1);
 
 const CMD_PIXELATE = '-resize 10% -sharpen 0x1 -scale 500%';
 const CMD_ART = '-resize 10% -filter point -resize 800% -fx "(i%8!=0)*(j%8!=0)*u"';
-const OUT_DIR = 'pixelated/';
+const OUT_DIR = 'pixelated';
 
 $mode = $argv[1] ?? null;
 $input = $argv[2] ?? null;
+$output = $argv[3] ?? null;
 
 try {
     if ($mode === null || $input === null) {
         exit(1);
     }
 
+    if (!file_exists($input)) {
+        throw new Exception('存在しないファイル');
+    }
+
     match ($mode) {
-        'pixelate' => generatePixelatedImage($input),
+        'pixelate' => generatePixelatedImage($input, $output),
         default => throw new Exception('存在しないオプション'),
     };
 } catch (Exception $e) {
@@ -28,18 +33,26 @@ try {
 }
 
 /**
- * @param non-empty-string $inputFile
+ * @param non-empty-string $input
+ * @param non-empty-string|null $output
  * @return non-empty-string
  */
-function generatePixelatedImage(string|null $input): void
+function generatePixelatedImage(string $input, string|null $output): void
 {
-    $output = pathinfo($input, PATHINFO_FILENAME) . '_pixelated.png';
+    $outputDir = $output ? pathinfo($output, PATHINFO_DIRNAME) : OUT_DIR;
+    $outputFileName = $output ? pathinfo($output, PATHINFO_FILENAME) : pathinfo($input, PATHINFO_FILENAME);
+    if (!file_exists($outputDir)) {
+        if (!mkdir($outputDir, 0777, true)) {
+            throw new Exception("$outputDir ディレクトリ作成失敗");
+        }
+    }
+    $output = $outputDir . DIRECTORY_SEPARATOR . $outputFileName . '_pixelated.png';
     runMagic($input, CMD_PIXELATE, $output);
 }
 
 /**
- * @param non-empty-string $inputFile
- * @param non-empty-string $outputFile
+ * @param non-empty-string $input
+ * @param non-empty-string $output
  */
 function runMagic(string $input, string $params, string $output): void
 {
