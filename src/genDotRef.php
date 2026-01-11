@@ -17,7 +17,7 @@ $output = $argv[3] ?? null;
 
 try {
     if ($mode === null || $input === null) {
-        exit(1);
+        throw new Exception('オプションを指定してください');
     }
 
     if (!file_exists($input)) {
@@ -35,7 +35,6 @@ try {
 /**
  * @param non-empty-string $input
  * @param non-empty-string|null $output
- * @return non-empty-string
  */
 function generatePixelatedImage(string $input, string|null $output): void
 {
